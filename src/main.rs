@@ -152,6 +152,54 @@ fn create_pause_hash() -> HashMap<String, Keyboard> {
         "Left Alt".to_string(),
         Keyboard::LeftAlt,
     );
+    pause_vk.insert(
+        "F1".to_string(),
+        Keyboard::F1,
+    );
+    pause_vk.insert(
+        "F2".to_string(),
+        Keyboard::F2,
+    );
+    pause_vk.insert(
+        "F3".to_string(),
+        Keyboard::F3,
+    );
+    pause_vk.insert(
+        "F4".to_string(),
+        Keyboard::F4,
+    );
+    pause_vk.insert(
+        "F5".to_string(),
+        Keyboard::F5,
+    );
+    pause_vk.insert(
+        "F6".to_string(),
+        Keyboard::F6,
+    );
+    pause_vk.insert(
+        "F7".to_string(),
+        Keyboard::F7,
+    );
+    pause_vk.insert(
+        "F8".to_string(),
+        Keyboard::F8,
+    );
+    pause_vk.insert(
+        "F9".to_string(),
+        Keyboard::F9,
+    );
+    pause_vk.insert(
+        "F10".to_string(),
+        Keyboard::F10,
+    );
+    pause_vk.insert(
+        "F11".to_string(),
+        Keyboard::F11,
+    );
+    pause_vk.insert(
+        "F12".to_string(),
+        Keyboard::F12,
+    );
     pause_vk
 }
 
@@ -236,6 +284,18 @@ impl eframe::App for MyApp {
                     ui.selectable_value(&mut self.pause_select, String::from("Tab"), "Tab");
                     ui.selectable_value(&mut self.pause_select, String::from("Backspace"), "Backspace");
                     ui.selectable_value(&mut self.pause_select, String::from("Left Alt"), "Left Alt");
+                    ui.selectable_value(&mut self.pause_select, String::from("F1"), "F1");
+                    ui.selectable_value(&mut self.pause_select, String::from("F2"), "F2");
+                    ui.selectable_value(&mut self.pause_select, String::from("F3"), "F3");
+                    ui.selectable_value(&mut self.pause_select, String::from("F4"), "F4");
+                    ui.selectable_value(&mut self.pause_select, String::from("F5"), "F5");
+                    ui.selectable_value(&mut self.pause_select, String::from("F6"), "F6");
+                    ui.selectable_value(&mut self.pause_select, String::from("F7"), "F7");
+                    ui.selectable_value(&mut self.pause_select, String::from("F8"), "F8");
+                    ui.selectable_value(&mut self.pause_select, String::from("F9"), "F9");
+                    ui.selectable_value(&mut self.pause_select, String::from("F10"), "F10");
+                    ui.selectable_value(&mut self.pause_select, String::from("F11"), "F11");
+                    ui.selectable_value(&mut self.pause_select, String::from("F12"), "F12");
                 }
             );
 
