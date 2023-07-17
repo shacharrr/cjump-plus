@@ -109,6 +109,11 @@ fn main() -> Result<(), eframe::Error> {
     )
 }
 
+fn find_key_for_value<'a>(map: &'a HashMap<String, Keyboard>, value: Keyboard) -> Option<&'a String> {
+    map.iter()
+        .find_map(|(key, &val)| if val == value { Some(key) } else { None })
+}
+
 fn create_jump_hash() -> HashMap<String, Keyboard> {
     let mut jump_vk = HashMap::new();
     jump_vk.insert(
@@ -216,12 +221,16 @@ struct MyApp {
 
 impl Default for MyApp {
     fn default() -> Self {
+        let jump_vk = create_jump_hash();
+        let pause_vk = create_pause_hash();
+        let jc = jump_vk.clone();
+        let cp = pause_vk.clone();
         Self {
             dark: unsafe { DARK },
-            jump_vk: create_jump_hash(),
-            jump_select: String::from("Space"),
-            pause_vk: create_pause_hash(),
-            pause_select: String::from("Enter"),
+            jump_vk: jump_vk,
+            jump_select: find_key_for_value(&jc, unsafe { JUMP_BIND }).unwrap().to_string(),
+            pause_vk: pause_vk,
+            pause_select: find_key_for_value(&cp, unsafe { PAUSE_BIND }).unwrap().to_string(),
             delay: unsafe { DELAY },
         }
     }
