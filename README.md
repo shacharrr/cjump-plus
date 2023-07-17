@@ -12,3 +12,4 @@ An improved version of [cjump.exe](https://github.com/zasbu/crouchjump) by [zasb
 
 ## Is it safe
 Couldn't tell if its totally safe, but it is at least as safe as the previous [cjump](https://github.com/zasbu/crouchjump) and [tunrbinds](https://github.com/t5mat/turnbinds/)
+For some reason this program is flagged as a virus for some people (It's not a virus) :)
